@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生电服务器和机械动力服务器封禁喜报</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- 配置Tailwind自定义样式 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'red-joy': '#E63946',
+                        'red-dark': '#C41E3A',
+                        'gold-joy': '#FFD700',
+                        'gold-light': '#FFFACD',
+                        'yellow-joy': '#FFC857',
+                        'server1': '#1E90FF',
+                        'server2': '#32CD32',
+                    },
+                    fontFamily: {
+                        'festive': ['"Ma Shan Zheng"', 'cursive'],
+                        'cursive': ['"ZCOOL QingKe HuangYou"', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- 自定义工具类 -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            .text-shadow-lg {
+                text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+            }
+            .border-pattern {
+                background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffd700' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+            }
+            .scroll-decoration {
+                background-image: url("data:image/svg+xml,%3Csvg width='60' height='120' viewBox='0 0 60 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627,1.867L54.627,1.867c-0.688-0.825-1.701-1.367-2.774-1.367c-1.073,0-2.086,0.542-2.774,1.367L30,30.672L10.147,1.867 C9.459,1.042 8.446,0.5 7.373,0.5C6.3,0.5 5.287,1.042 4.599,1.867L4.599,1.867C3.911,2.692 3.5,3.733 3.5,4.833v110.333 C3.5,117.267 3.911,118.308 4.599,119.133l0,0c0.688,0.825 1.701,1.367 2.774,1.367c1.073,0 2.086-0.542 2.774-1.367L30,91.328l19.853,28.805c0.688,0.825 1.701,1.367 2.774,1.367c1.073,0 2.086-0.542 2.774-1.367l0,0 c0.688-0.825 1.099-1.867 1.099-2.967V4.833C55.726,3.733 55.315,2.692 54.627,1.867z' fill='%23ffd700' fill-opacity='0.3'/%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+            }
+            .firecracker {
+                position: absolute;
+                width: 4px;
+                background-color: #ff4500;
+                transform-origin: bottom center;
+            }
+            .flower {
+                position: absolute;
+                transform-origin: center;
+                z-index: 0;
+            }
+            .confetti {
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                opacity: 0;
+            }
+        }
+    </style>
+    
+    <!-- 引入中文字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+</head>
+
+<body class="min-h-screen bg-red-joy border-pattern relative overflow-x-hidden">
+    <!-- 背景音乐 - 好运来 -->
+    <audio id="music1" loop hidden>
+        <source src="123.mp3" type="audio/mpeg">
+    </audio>
+     
+    <!-- 背景音乐 - 春节序幕曲 -->
+    <audio id="music2" loop hidden>
+        <source src="456.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container mx-auto px-4 py-8 max-w-5xl relative z-10">
+        <!-- 顶部装饰 -->
+        <div class="flex justify-center mb-6">
+            <div class="inline-flex gap-3">
+                <i class="fa fa-fire text-gold-joy text-3xl animate-pulse"></i>
+                <i class="fa fa-gift text-gold-joy text-3xl animate-pulse" style="animation-delay: 0.2s"></i>
+                <i class="fa fa-fireworks text-gold-joy text-3xl animate-pulse" style="animation-delay: 0.4s"></i>
+                <i class="fa fa-gift text-gold-joy text-3xl animate-pulse" style="animation-delay: 0.6s"></i>
+                <i class="fa fa-fire text-gold-joy text-3xl animate-pulse" style="animation-delay: 0.8s"></i>
+            </div>
+        </div>
+        
+        <!-- 喜报标题区域 -->
+        <div class="relative mb-10 bg-gradient-to-b from-red-joy to-red-dark rounded-lg shadow-2xl overflow-hidden border-6 border-gold-joy transform transition-transform hover:scale-[1.01]">
+            <!-- 装饰元素 -->
+            <div class="absolute top-0 left-0 w-16 h-full scroll-decoration"></div>
+            <div class="absolute top-0 right-0 w-16 h-full scroll-decoration transform scale-x-[-1]"></div>
+            
+            <!-- 标题内容 -->
+            <div class="py-10 px-20 text-center relative z-10">
+                <div class="flex justify-center mb-4">
+                    <i class="fa fa-gavel text-5xl text-gold-joy mx-4 animate-bounce"></i>
+                    <h1 class="font-festive text-[clamp(2.8rem,7vw,4.5rem)] text-gold-joy text-shadow-lg">服务器封禁喜报</h1>
+                    <i class="fa fa-gavel text-5xl text-gold-joy mx-4 animate-bounce" style="animation-delay: 0.5s"></i>
+                </div>
+                <p class="font-festive text-[clamp(1.4rem,4vw,2rem)] text-gold-light mt-2">维护公平游戏环境，共建和谐社区</p>
+                
+                <!-- 装饰花纹 -->
+                <div class="flex justify-center my-6">
+                    <div class="w-32 h-2 bg-gold-joy opacity-80 rounded-full"></div>
+                    <i class="fa fa-diamond text-gold-joy mx-4 text-2xl animate-pulse"></i>
+                    <div class="w-32 h-2 bg-gold-joy opacity-80 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 封禁名单表格 -->
+        <div class="bg-white/95 rounded-lg shadow-2xl overflow-hidden border-6 border-gold-joy mb-10 transform transition-all duration-300 hover:shadow-red-500/30">
+            <div class="p-4 bg-gradient-to-r from-red-600 to-red-dark">
+                <h2 class="font-festive text-[clamp(1.5rem,3vw,2rem)] text-gold-joy text-center">违规玩家处理名单</h2>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-center">
+                    <thead>
+                        <tr class="bg-gradient-to-r from-red-600 to-red-dark text-white">
+                            <th class="py-4 px-2 md:px-4 font-festive text-xl border-b-2 border-gold-joy">玩家名称</th>
+                            <th class="py-4 px-2 md:px-4 font-festive text-xl border-b-2 border-gold-joy">所属服务器</th>
+                            <th class="py-4 px-2 md:px-4 font-festive text-xl border-b-2 border-gold-joy">封禁时间</th>
+                            <th class="py-4 px-2 md:px-4 font-festive text-xl border-b-2 border-gold-joy">封禁原因</th>
+                            <th class="py-4 px-2 md:px-4 font-festive text-xl border-b-2 border-gold-joy">封禁时长</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 封禁人员1 -->
+                        <tr class="hover:bg-yellow-50 transition-colors">
+                            <td class="py-4 px-2 border-b border-gray-200 font-bold text-lg">lukabaersa（测试）</td>
+                            <td class="py-4 px-2 border-b border-gray-200">
+                                <span class="inline-block bg-server1 text-white px-3 py-1 rounded-full text-sm font-bold">服务器1</span>
+                            </td>
+                            <td class="py-4 px-2 border-b border-gray-200">2025年8月1日 10:30</td>
+                            <td class="py-4 px-2 border-b border-gray-200">测试测试</td>
+                            <td class="py-4 px-2 border-b border-gray-200 text-red-600 font-bold text-lg">永久封禁（测试占位）</td>
+                        </tr>
+                        
+                        <!-- 封禁人员2 -->
+                        <tr class="hover:bg-yellow-50 transition-colors">
+                            <td class="py-4 px-2 border-b border-gray-200 font-bold text-lg">测试</td>
+                            <td class="py-4 px-2 border-b border-gray-200">
+                                <span class="inline-block bg-server2 text-white px-3 py-1 rounded-full text-sm font-bold">服务器2</span>
+                            </td>
+                            <td class="py-4 px-2 border-b border-gray-200">2025年8月2日 15:45</td>
+                            <td class="py-4 px-2 border-b border-gray-200">测试</td>
+                            <td class="py-4 px-2 border-b border-gray-200 text-orange-600 font-bold text-lg">测试</td>
+                        </tr>
+                        
+                        <!-- 封禁人员3 -->
+                        <tr class="hover:bg-yellow-50 transition-colors">
+                            <td class="py-4 px-2 border-b border-gray-200 font-bold text-lg">测试</td>
+                            <td class="py-4 px-2 border-b border-gray-200">
+                                <span class="inline-block bg-server1 text-white px-3 py-1 rounded-full text-sm font-bold">服务器1</span>
+                            </td>
+                            <td class="py-4 px-2 border-b border-gray-200">2025年8月3日 09:10</td>
+                            <td class="py-4 px-2 border-b border-gray-200">测试</td>
+                            <td class="py-4 px-2 border-b border-gray-200 text-orange-600 font-bold text-lg">测试</td>
+                        </tr>
+                        
+                        <!-- 封禁人员4 -->
+                        <tr class="hover:bg-yellow-50 transition-colors">
+                            <td class="py-4 px-2 border-b border-gray-200 font-bold text-lg">测试</td>
+                            <td class="py-4 px-2 border-b border-gray-200">
+                                <span class="inline-block bg-server2 text-white px-3 py-1 rounded-full text-sm font-bold">服务器2</span>
+                            </td>
+                            <td class="py-4 px-2 border-b border-gray-200">2025年8月4日 16:20</td>
+                            <td class="py-4 px-2 border-b border-gray-200">测试</td>
+                            <td class="py-4 px-2 border-b border-gray-200 text-orange-600 font-bold text-lg">测试</td>
+                        </tr>
+                        
+                        <!-- 封禁人员5 -->
+                        <tr class="hover:bg-yellow-50 transition-colors">
+                            <td class="py-4 px-2 border-b border-gray-200 font-bold text-lg">测试</td>
+                            <td class="py-4 px-2 border-b border-gray-200">
+                                <span class="inline-block bg-server1 text-white px-3 py-1 rounded-full text-sm font-bold">服务器1</span>
+                            </td>
+                            <td class="py-4 px-2 border-b border-gray-200">2025年8月5日 11:50</td>
+                            <td class="py-4 px-2 border-b border-gray-200">测试</td>
+                            <td class="py-4 px-2 border-b border-gray-200 text-orange-600 font-bold text-lg">测试</td>
+                        </tr>
+
+                        <!-- 封禁人员6 -->
+                        <tr class="hover:bg-yellow-50 transition-colors">
+                            <td class="py-4 px-2 border-b border-gray-200 font-bold text-lg">测试</td>
+                            <td class="py-4 px-2 border-b border-gray-200">
+                                <span class="inline-block bg-server2 text-white px-3 py-1 rounded-full text-sm font-bold">服务器2</span>
+                            </td>
+                            <td class="py-4 px-2 border-b border-gray-200">2025年8月6日 14:20</td>
+                            <td class="py-4 px-2 border-b border-gray-200">测试</td>
+                            <td class="py-4 px-2 border-b border-gray-200 text-orange-600 font-bold text-lg">测试</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- 公告和装饰 -->
+        <div class="text-center">
+            <div class="inline-block bg-white/90 px-8 py-5 rounded-lg border-4 border-gold-joy shadow-xl transform rotate-[-1deg] transition-transform hover:rotate-0 duration-300">
+                <p class="font-festive text-[clamp(1.3rem,4vw,1.8rem)] text-red-700">
+                    特此公告，望各位玩家遵守服务器规则，共同维护良好的游戏环境！（本服暂时无人封禁，以上纯属测试，充当占位符号，一旦有人封号，在此公告）
+                </p>
+            </div>
+            
+            <!-- 底部装饰 -->
+            <div class="flex justify-center mt-8 mb-6">
+                <i class="fa fa-star text-gold-joy text-3xl mx-2 animate-pulse"></i>
+                <i class="fa fa-star text-gold-joy text-3xl mx-2 animate-pulse" style="animation-delay: 0.2s"></i>
+                <i class="fa fa-star text-gold-joy text-3xl mx-2 animate-pulse" style="animation-delay: 0.4s"></i>
+                <i class="fa fa-star text-gold-joy text-3xl mx-2 animate-pulse" style="animation-delay: 0.6s"></i>
+                <i class="fa fa-star text-gold-joy text-3xl mx-2 animate-pulse" style="animation-delay: 0.8s"></i>
+            </div>
+            
+            <!-- 底部印章 -->
+            <div class="mt-10 flex justify-center">
+                <div class="w-32 h-32 md:w-40 md:h-40 bg-red-dark rounded-full flex items-center justify-center border-4 border-gold-joy transform rotate-6 shadow-lg">
+                    <p class="font-festive text-center text-gold-joy text-xl md:text-2xl">服务器管理处</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 简单的JavaScript增强 -->
+    <script>
+        // 页面加载完成后的动画效果
+        document.addEventListener('DOMContentLoaded', () => {
+            // 表格行添加进入动画
+            const rows = document.querySelectorAll('tbody tr');
+            rows.forEach((row, index) => {
+                row.style.opacity = '0';
+                row.style.transform = 'translateY(20px)';
+                row.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                
+                setTimeout(() => {
+                    row.style.opacity = '1';
+                    row.style.transform = 'translateY(0)';
+                }, 300 + (index * 150));
+            });
+            
+            // 处理音频播放 - 随机播放两首歌曲
+            const music1 = document.getElementById('music1');
+            const music2 = document.getElementById('music2');
+            const musics = [music1, music2];
+            
+            // 随机选择一首开始播放
+            let currentMusic = musics[Math.floor(Math.random() * musics.length)];
+            
+            // 用户交互后播放音乐
+            document.body.addEventListener('click', () => {
+                if (currentMusic.paused) {
+                    currentMusic.play().catch(e => console.log('需要用户交互才能播放音频:', e));
+                }
+            }, { once: true });
+            
+            // 一首结束后随机播放另一首
+            music1.addEventListener('ended', () => {
+                currentMusic = music2;
+                currentMusic.play();
+            });
+            
+            music2.addEventListener('ended', () => {
+                currentMusic = music1;
+                currentMusic.play();
+            });
+            
+            // 创建动态鞭炮效果
+            createFirecrackers(6);
+            
+            // 创建鲜花装饰
+            createFlowers(8);
+            
+            // 随机掉落的彩屑效果
+            createConfetti(50);
+        });
+        
+        // 创建鞭炮效果
+        function createFirecrackers(count) {
+            const container = document.body;
+            
+            for (let i = 0; i < count; i++) {
+                // 随机位置和大小
+                const isLeft = Math.random() > 0.5;
+                const posX = isLeft ? Math.random() * 50 + 20 : window.innerWidth - (Math.random() * 50 + 40);
+                const posY = Math.random() * window.innerHeight * 0.6 + 100;
+                const height = Math.random() * 80 + 50;
+                
+                // 创建鞭炮主体
+                const firecracker = document.createElement('div');
+                firecracker.className = 'firecracker';
+                firecracker.style.left = `${posX}px`;
+                firecracker.style.top = `${posY}px`;
+                firecracker.style.height = `${height}px`;
+                
+                container.appendChild(firecracker);
+                
+                // 随机摇摆动画
+                const swingAnimation = document.createElement('style');
+                swingAnimation.textContent = `
+                    @keyframes swing-${i} {
+                        0%, 100% { transform: rotate(-${Math.random() * 10 + 5}deg); }
+                        50% { transform: rotate(${Math.random() * 10 + 5}deg); }
+                    }
+                `;
+                document.head.appendChild(swingAnimation);
+                
+                firecracker.style.animation = `swing-${i} ${Math.random() * 2 + 2}s ease-in-out infinite`;
+                
+                // 随机时间后爆炸
+                setTimeout(() => {
+                    explodeFirecracker(firecracker, posX, posY - height);
+                }, Math.random() * 8000 + 2000);
+            }
+        }
+        
+        // 鞭炮爆炸效果
+        function explodeFirecracker(firecracker, x, y) {
+            // 移除鞭炮
+            firecracker.remove();
+            
+            // 创建爆炸效果
+            const explosion = document.createElement('div');
+            explosion.style.position = 'absolute';
+            explosion.style.left = `${x}px`;
+            explosion.style.top = `${y}px`;
+            explosion.style.width = '0';
+            explosion.style.height = '0';
+            explosion.style.borderRadius = '50%';
+            explosion.style.backgroundColor = 'rgba(255, 215, 0, 0.8)';
+            explosion.style.boxShadow = '0 0 20px 10px rgba(255, 69, 0, 0.7)';
+            explosion.style.zIndex = '10';
+            explosion.style.transition = 'all 0.5s ease-out';
+            
+            document.body.appendChild(explosion);
+            
+            // 爆炸动画
+            setTimeout(() => {
+                explosion.style.width = '60px';
+                explosion.style.height = '60px';
+                explosion.style.transform = 'translate(-50%, -50%)';
+            }, 10);
+            
+            // 爆炸消失
+            setTimeout(() => {
+                explosion.style.opacity = '0';
+                setTimeout(() => explosion.remove(), 500);
+            }, 500);
+        }
+        
+        // 创建鲜花装饰
+        function createFlowers(count) {
+            const container = document.body;
+            const flowerShapes = [
+                '<i class="fa fa-pagelines text-green-600" style="font-size: 30px;"></i>',
+                '<i class="fa fa-leaf text-green-700" style="font-size: 25px;"></i>',
+                '<div style="color: #FF69B4;"><i class="fa fa-heart" style="font-size: 28px;"></i></div>',
+                '<div style="color: #FFD700;"><i class="fa fa-star" style="font-size: 26px;"></i></div>'
+            ];
+            
+            for (let i = 0; i < count; i++) {
+                const flower = document.createElement('div');
+                flower.className = 'flower';
+                flower.innerHTML = flowerShapes[Math.floor(Math.random() * flowerShapes.length)];
+                
+                // 随机位置
+                const posX = Math.random() * window.innerWidth;
+                const posY = Math.random() * window.innerHeight;
+                
+                flower.style.left = `${posX}px`;
+                flower.style.top = `${posY}px`;
+                
+                // 随机旋转和大小
+                flower.style.transform = `rotate(${Math.random() * 360}deg) scale(${Math.random() * 0.5 + 0.8})`;
+                
+                container.appendChild(flower);
+                
+                // 轻微摇摆动画
+                const animation = document.createElement('style');
+                animation.textContent = `
+                    @keyframes flower-sway-${i} {
+                        0%, 100% { transform: rotate(${Math.random() * 360}deg) scale(${Math.random() * 0.5 + 0.8}) rotate(-5deg); }
+                        50% { transform: rotate(${Math.random() * 360}deg) scale(${Math.random() * 0.5 + 0.8}) rotate(5deg); }
+                    }
+                `;
+                document.head.appendChild(animation);
+                
+                flower.style.animation = `flower-sway-${i} ${Math.random() * 4 + 6}s ease-in-out infinite`;
+            }
+        }
+        
+        // 创建彩屑效果
+        function createConfetti(count) {
+            const container = document.body;
+            const colors = ['#FFD700', '#FF6347', '#FF69B4', '#32CD32', '#1E90FF', '#FF4500'];
+            
+            for (let i = 0; i < count; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                
+                // 随机属性
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.left = `${Math.random() * 100}vw`;
+                confetti.style.top = `-${Math.random() * 20 + 10}px`;
+                confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                
+                // 随机形状
+                if (Math.random() > 0.5) {
+                    confetti.style.borderRadius = '50%';
+                }
+                
+                container.appendChild(confetti);
+                
+                // 下落动画
+                animateConfetti(confetti);
+            }
+        }
+        
+        // 彩屑下落动画
+        function animateConfetti(confetti) {
+            const duration = Math.random() * 8 + 10;
+            const startPos = parseFloat(confetti.style.left);
+            const endPos = startPos + (Math.random() * 100 - 50);
+            
+            let start = null;
+            
+            function step(timestamp) {
+                if (!start) start = timestamp;
+                const progress = (timestamp - start) / (duration * 1000);
+                
+                if (progress < 1) {
+                    // 下落和飘动效果
+                    confetti.style.top = `${progress * 100}vh`;
+                    confetti.style.left = `${startPos + (endPos - startPos) * Math.sin(progress * Math.PI)}px`;
+                    confetti.style.opacity = Math.min(progress * 2, 1 - (progress - 0.8) * 5);
+                    requestAnimationFrame(step);
+                } else {
+                    // 重置彩屑
+                    confetti.style.opacity = '0';
+                    setTimeout(() => {
+                        confetti.style.left = `${Math.random() * 100}vw`;
+                        confetti.style.top = `-${Math.random() * 20 + 10}px`;
+                        animateConfetti(confetti);
+                    }, Math.random() * 5000);
+                }
+            }
+            
+            requestAnimationFrame(step);
+        }
+    </script>
+    <div>Copyright &copy;2024 <a target="_red" style="color:#FF">《王老帅与荔枝ofMCserver》和《超绝生电服务器》保留一切权力</a>. All Rights Reserved</div>
+</div>
+</body>
+</html>
+    
